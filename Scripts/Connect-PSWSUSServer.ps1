@@ -78,6 +78,9 @@ Function Connect-PSWSUSServer {
                 $Port = $Matches.Port
             }
         }
+        Elseif($WsusServer -eq ".") {
+            $WsusServer = "localhost"
+        }
         #Make connection to WSUS server  
         Try {
             Write-Verbose "Connecting to $($WsusServer) <$($Port)>"
